@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Game Library – Login</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: #fff;
+    width: 380px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: #333;
+}
+
+p.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #4F46E5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4338ca;
+}
+
+small {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #555;
+}
+
+a {
+    color: #4F46E5;
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+    <h1>Welcome Back</h1>
+    <p class="subtitle">Login to your Game Library</p>
+
+    <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="Username" required autocomplete="off">
+        <input type="password" id="loginPass" placeholder="Password" required autocomplete="off">
+        <button type="submit">Login</button>
+    </form>
+
+    <small>Don't have an account? <a href="register.html">Create one</a></small>
+</div>
+
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>My Games</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+/* Compact Dark Top Bar */
+.topbar {
+    background: #222;
+    color: #fff;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topbar h1 { margin: 0; font-size: 1.4rem; font-weight: bold; }
+.topbar a { color: white; margin-right: 20px; text-decoration: none; }
+.topbar a:hover { color: #ffcc00; }
+.topbar button { 
+    background: #d9534f;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+.topbar button:hover { background: #c9302c; }
+#welcomeUser { font-weight: bold; margin-right: 10px; }
+
+/* Compact Amazon-style filter bar */
+.filter-bar {
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.filters-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Compact Search Input */
+.filters-compact input[type="text"] {
+    padding: 6px 10px;
+    font-size: 13px;
+    min-width: 180px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Compact Dropdowns */
+.filters-compact select {
+    padding: 6px 8px;
+    font-size: 13px;
+    min-width: 120px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 34px;
+}
+
+/* Wishlist toggle compact */
+.wishlist-toggle {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    gap: 4px;
+    font-weight: bold;
+}
+
+.filters-compact input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+}
+  </style>
+
+</head>
+
+<body>
+
+  <header class="topbar">
+    <h1>My Game List</h1>
+    <div>
+      <a href="dashboard.php">Dashboard</a>
+      <a href="library.html">Add/Edit Games</a>
+      <a href="my_games.html" style="font-weight:bold;">My Games</a>
+      <span id="welcomeUser"></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!--  COMPACT FILTER BAR -->
+    <section class="filter-bar">
+      <form id="filterForm" class="filters-compact">
+
+        <input type="text" id="search" placeholder="Search games..." />
+
+        <select id="filterPlatform">
+          <option value="">Platform</option>
+          <option>PC</option>
+          <option>Xbox</option>
+          <option>PlayStation</option>
+          <option>Nintendo</option>
+          <option>Mobile</option>
+        </select>
+
+        <select id="filterGenre">
+          <option value="">Genre</option>
+          <option>Action</option>
+      <option>Adventure</option>
+      <option>RPG</option>
+      <option>Survival</option>
+      <option>Sports</option>
+      <option>Racing</option>
+      <option>Strategy</option>
+      <option>Shooter</option>
+      <option>Puzzle</option>
+      <option>Horror</option>
+      <option>Simulation</option>
+      <option>Fighting</option>
+      <option>Platformer</option>
+      <option>MMO</option>
+        </select>
+
+        <select id="filterRating">
+  <option value="">Rating</option>
+  <option value="5">5★</option>
+  <option value="4">4★</option>
+  <option value="3">3★</option>
+  <option value="2">2★</option>
+  <option value="1">1★</option>
+</select>
+
+
+        <!-- Year Filter (1990–2025) -->
+    <select id="filterYear">
+      <option value="">Year</option>
+      <!-- Auto-generated 1990–2025 -->
+      <script>
+        for (let y = 2025; y >= 1990; y--) {
+          document.write(`<option value="${y}">${y}</option>`);
+        }
+      </script>
+    </select>
+
+        <label class="wishlist-toggle">
+     Wishlist <input type="checkbox" id="showWishlist">
+</label>
+
+
+        <select id="sortBy">
+          <option value="recent">Most Recent</option>
+          <option value="az">A–Z</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+
+      </form>
+    </section>
+
+    <!-- Game List Grid -->
+    <section id="gamesList" class="grid"></section>
+
+  </main>
+
+  <script src="assets/js/library_list.js"></script>
+  <script>
+    document.getElementById("logoutBtn").onclick = () => {
+      window.location.href = "logout.php";
+    };
+  </script>
+
+</body>
+</html>

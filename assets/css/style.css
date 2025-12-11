@@ -1,0 +1,278 @@
+/* ------------------------------------------------------
+   GLOBAL NETFLIX / STEAM STYLE THEME
+   - Applies dark theme and universal styling
+------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background: #141414;   /* Dark background like Netflix */
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Ensures consistent page width */
+.container {
+  width: 95%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+/* ------------------------------------------------------
+   TOP NAVIGATION (Netflix Style)
+   - Styled top navigation bar used across all pages
+------------------------------------------------------ */
+.topbar {
+  background: #000;     /* Pure black for Netflix look */
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 40px;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.topbar h1 {
+  color: #e50914;        /* Netflix Red */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.topbar nav a {
+  margin-left: 25px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  transition: .2s;
+}
+
+.topbar nav a:hover {
+  color: #fff;           /* Highlight on hover */
+}
+
+/* Logout button styling */
+#logoutBtn {
+  margin-left: 20px;
+  background: #e50914;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: .25s;
+}
+
+#logoutBtn:hover {
+  background: #b20710;   /* Slightly darker red */
+}
+
+/* ------------------------------------------------------
+   FORM BOX (LOGIN / REGISTER)
+   - Dark, centered form container
+------------------------------------------------------ */
+.form-container {
+  max-width: 420px;
+  margin: 80px auto;
+  background: #1f1f1f;
+  padding: 35px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Text input boxes */
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background: #333;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+/* Submit button styling */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #e50914;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.form-container button:hover {
+  background: #b20710;
+}
+
+/* ------------------------------------------------------
+   GAME CARD GRID (Netflix-Style Rows)
+   - Displays games in a responsive grid
+------------------------------------------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+  padding: 25px;
+}
+
+/* Individual game cards */
+.game-card {
+  background: #1f1f1f;
+  padding: 18px;
+  border-radius: 10px;
+  transition: transform .25s, box-shadow .25s;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: scale(1.06); /* Hover zoom effect */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+/* Game Title */
+.game-card h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Game details text */
+.game-card p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #ccc;
+}
+
+/* Buttons inside game cards */
+.game-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.game-actions .button {
+  background: #198754;  /* Green edit button */
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.game-actions button {
+  background: #e50914; /* Red delete button */
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Highlight wishlist games with gold border */
+.game-card.wishlist {
+  border: 2px solid gold;
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
+}
+
+/* ------------------------------------------------------
+   FILTER BAR
+   - Used for filtering games on My Games page
+------------------------------------------------------ */
+.filter-bar {
+  background: #111;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+/* Search and dropdowns */
+.filter-bar select,
+.filter-bar input[type="text"] {
+  padding: 8px 10px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+}
+
+/* Wishlist checkbox label */
+.wishlist-toggle {
+  display: flex;
+  align-items: center;
+  color: gold;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------
+   DASHBOARD FIX
+   - Styling for dashboard summary and tables
+------------------------------------------------------ */
+.dashboard-card {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  border-left: 5px solid #e50914;  /* Red accent stripe */
+}
+
+.dashboard-card h2 {
+  color: #e50914;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #fff;
+}
+
+/* Table container */
+.table-box {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  margin-top: 20px;
+}
+
+.table-box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Table headers */
+.table-box th {
+  padding: 12px;
+  background: #222;
+  color: #e50914;
+}
+
+/* Table rows */
+.table-box td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  color: #ddd;
+}
+
+.table-box tr:hover {
+  background: #2a2a2a;  /* Hover highlight */
+}
